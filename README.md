@@ -9,45 +9,64 @@
 
 ```
 データの活用/
-├── README.md      # このファイル
-├── main.tex       # メインのLaTeX教材
-├── preamble.tex   # LaTeXプリアンブル
-├── Makefile       # LaTeXコンパイル用
-├── watch.sh       # 自動コンパイルスクリプト
-└── sections/      # セクション別のTeXファイル
-    ├── 01_度数分布とヒストグラム.tex
-    ├── 02_代表値.tex
-    ├── 03_相対度数.tex
-    └── 04_累積度数.tex
+├── README.md        # このファイル
+├── main.tex         # メインのLaTeX教材
+├── preamble.tex     # LaTeXプリアンブル
+├── Makefile         # LaTeXコンパイル用（make コマンド）
+├── .latexmkrc       # latexmk設定ファイル
+├── .vscode/         # VS Code設定
+│   └── settings.json
+├── watch.sh         # 自動コンパイルスクリプト
+└── sections/        # セクション別のTeXファイル
+    ├── 01_データの整理.tex
+    ├── 02_データの代表値.tex
+    └── 03_データの散らばりと四分位範囲.tex
 ```
 
 ## 🚀 使用方法
 
-### VS Code での使用（推奨）
+このプロジェクトは **3つのコンパイル方法** に対応しています：
+
+### 方法1: VS Code での使用（最も簡単・推奨）
 
 **前提条件**: LaTeX Workshop 拡張機能がインストールされていること
 
-1. **ビルド方法**：
+1. **自動ビルド（推奨）**：
+   - ファイルを保存すると自動的にコンパイル
+   - `.vscode/settings.json` で設定済み
 
+2. **手動ビルド**：
    - `Ctrl+Alt+B` (Windows/Linux) または `Cmd+Option+B` (Mac)
    - コマンドパレット (`Ctrl+Shift+P`) → "LaTeX Workshop: Build LaTeX project"
    - 右クリックメニュー → "Build LaTeX project"
 
-2. **PDF プレビュー**：
-
+3. **PDF プレビュー**：
    - `Ctrl+Alt+V` (Windows/Linux) または `Cmd+Option+V` (Mac)
    - コマンドパレット → "LaTeX Workshop: View LaTeX PDF"
 
-3. **タスクランナー**：
-   - `Ctrl+Shift+P` → "Tasks: Run Task" → "LaTeX Build (uplatex)"
+**使用されるコンパイラ**: デフォルトで `make` コマンドを使用（最も安定）
 
-### コマンドラインでの使用
+### 方法2: コマンドライン（Make）
 
 ```bash
 make all          # PDFの作成
 make clean        # 補助ファイルを削除
+make rebuild      # クリーン＆リビルド
 make answer       # 解答版の作成
 ```
+
+**特徴**: uplatex → uplatex → dvipdfmx の2パスコンパイル
+
+### 方法3: latexmk（汎用的）
+
+```bash
+latexmk main.tex  # PDFの作成
+latexmk -c        # 補助ファイルを削除
+latexmk -C        # すべての生成ファイルを削除
+latexmk -pvc      # 自動監視モード
+```
+
+**特徴**: `.latexmkrc` で uplatex → dvipdfmx を設定済み
 
 ### 🔄 リアルタイム自動コンパイル
 
@@ -123,10 +142,27 @@ sudo apt-get install inotify-tools
 
 ## 🔧 必要な環境
 
-- **LaTeX**: pLaTeX または upLaTeX
+### 必須
+- **LaTeX**: upLaTeX（日本語対応）
 - **PDF 変換**: dvipdfmx
-- **自動監視**: fswatch（推奨）または inotify-tools
 - **必要パッケージ**: preamble.tex 参照
+
+### オプション
+- **latexmk**: 汎用的なコンパイルツール（推奨）
+- **fswatch**: ファイル監視ツール（macOS）
+- **inotify-tools**: ファイル監視ツール（Linux）
+
+### インストール例（macOS）
+
+```bash
+# Homebrew で TeX Live をインストール
+brew install --cask mactex
+
+# fswatch のインストール（オプション）
+brew install fswatch
+
+# latexmk は TeX Live に含まれています
+```
 
 ## 📖 使用の流れ
 
@@ -153,17 +189,39 @@ sudo apt-get install inotify-tools
 
 ## 🛠️ トラブルシューティング
 
-### LaTeX コンパイルエラー
+### ❌ コンパイルエラーが出る
 
-- 必要なパッケージがインストールされているか確認
-- 文字エンコーディングが UTF-8 になっているか確認
-- `make clean`で補助ファイルを削除してから再コンパイル
+**問題**: 「File not found」などのエラー
 
-### 自動監視が動作しない
+**解決策**:
+```bash
+# 必ず uplatex を使用してください（pdflatex は不可）
+make clean
+make all
 
+# または
+latexmk main.tex
+```
+
+**重要**: このプロジェクトは **uplatex → dvipdfmx** でのコンパイルが必須です。
+- ❌ `pdflatex` は使用できません
+- ✅ `uplatex` または `make` を使用してください
+
+### ❌ VS Code でコンパイルできない
+
+**問題**: LaTeX Workshop がエラーを出す
+
+**解決策**:
+1. `.vscode/settings.json` が存在することを確認
+2. LaTeX Workshop の設定で "make" がデフォルトレシピになっていることを確認
+3. それでもダメな場合は、ターミナルで `make all` を実行
+
+### ❌ 自動監視が動作しない
+
+**解決策**:
 - `fswatch`がインストールされているか確認
 - `make watch-poll`でポーリング方式を試す
-- ファイルの権限を確認
+- `latexmk -pvc main.tex` を試す
 
 ## 作成者
 

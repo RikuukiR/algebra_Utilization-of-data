@@ -1,20 +1,6 @@
 {
-  // LaTeX Workshop の設定
-  // 日本語文書（jsarticle）用の uplatex -> dvipdfmx ワークフロー
-
-  // ツールの定義
+  // LaTeX Workshop設定
   "latex-workshop.latex.tools": [
-    {
-      "name": "latexmk",
-      "command": "latexmk",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ],
-      "env": {}
-    },
     {
       "name": "uplatex",
       "command": "uplatex",
@@ -32,54 +18,51 @@
     }
   ],
 
-  // レシピ（コンパイル手順）の定義
   "latex-workshop.latex.recipes": [
-    {
-      "name": "latexmk (uplatex)",
-      "tools": ["latexmk"]
-    },
     {
       "name": "uplatex -> dvipdfmx",
       "tools": ["uplatex", "uplatex", "dvipdfmx"]
     }
   ],
 
-  // デフォルトレシピ：latexmk を使用（.latexmkrc で uplatex 設定済み）
-  "latex-workshop.latex.recipe.default": "latexmk (uplatex)",
+  // デフォルトのレシピを設定
+  "latex-workshop.latex.recipe.default": "lastUsed",
 
-  // 重要：レシピを強制使用（pdflatex を使わせない）
-  "latex-workshop.latex.build.forceRecipeUsage": true,
-
-  // ファイル保存時に自動ビルド
+  // 自動ビルド設定
   "latex-workshop.latex.autoBuild.run": "onSave",
 
-  // 出力ディレクトリ（ルートに出力）
-  "latex-workshop.latex.outDir": ".",
+  // PDFビューアー設定
+  "latex-workshop.view.pdf.viewer": "tab",
 
-  // ビルド後に自動クリーンアップ
-  "latex-workshop.latex.autoClean.run": "onBuilt",
+  // クリーンアップ設定
   "latex-workshop.latex.clean.fileTypes": [
     "*.aux",
-    "*.log",
-    "*.dvi",
-    "*.synctex.gz",
-    "*.fls",
-    "*.fdb_latexmk",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
     "*.toc",
-    "*.out"
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.synctex.gz",
+    "*.dvi"
   ],
 
-  // PDFビューアの設定
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+  // SyncTeX設定
+  "latex-workshop.synctex.afterBuild.enabled": true,
 
-  // エクスプローラーで一時ファイルを非表示
-  "files.exclude": {
-    "**/*.aux": true,
-    "**/*.log": true,
-    "**/*.dvi": true,
-    "**/*.synctex.gz": true,
-    "**/*.fls": true,
-    "**/*.fdb_latexmk": true
-  }
+  // エラー表示設定
+  "latex-workshop.message.error.show": true,
+  "latex-workshop.message.warning.show": false
 }

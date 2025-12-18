@@ -1,5 +1,20 @@
 {
+  // LaTeX Workshop の設定
+  // 日本語文書（jsarticle）用の uplatex -> dvipdfmx ワークフロー
+
+  // ツールの定義
   "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
     {
       "name": "uplatex",
       "command": "uplatex",
@@ -14,28 +29,34 @@
       "name": "dvipdfmx",
       "command": "dvipdfmx",
       "args": ["%DOCFILE%.dvi"]
-    },
-    {
-      "name": "make",
-      "command": "make",
-      "args": ["all"],
-      "env": {}
     }
   ],
+
+  // レシピ（コンパイル手順）の定義
   "latex-workshop.latex.recipes": [
     {
-      "name": "make",
-      "tools": ["make"]
+      "name": "latexmk (uplatex)",
+      "tools": ["latexmk"]
     },
     {
       "name": "uplatex -> dvipdfmx",
       "tools": ["uplatex", "uplatex", "dvipdfmx"]
     }
   ],
-  "latex-workshop.latex.recipe.default": "make",
+
+  // デフォルトレシピ：latexmk を使用（.latexmkrc で uplatex 設定済み）
+  "latex-workshop.latex.recipe.default": "latexmk (uplatex)",
+
+  // 重要：レシピを強制使用（pdflatex を使わせない）
   "latex-workshop.latex.build.forceRecipeUsage": true,
+
+  // ファイル保存時に自動ビルド
   "latex-workshop.latex.autoBuild.run": "onSave",
+
+  // 出力ディレクトリ（ルートに出力）
   "latex-workshop.latex.outDir": ".",
+
+  // ビルド後に自動クリーンアップ
   "latex-workshop.latex.autoClean.run": "onBuilt",
   "latex-workshop.latex.clean.fileTypes": [
     "*.aux",
@@ -47,7 +68,12 @@
     "*.toc",
     "*.out"
   ],
+
+  // PDFビューアの設定
   "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+
+  // エクスプローラーで一時ファイルを非表示
   "files.exclude": {
     "**/*.aux": true,
     "**/*.log": true,

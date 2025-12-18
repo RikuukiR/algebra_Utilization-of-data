@@ -15,6 +15,19 @@
 \setcounter{definition}{0}
 \setcounter{theorem}{0}
 
+% ========================================
+% カウンターの階層化設定（○.○形式）
+% ========================================
+% 定義・定理・表カウンターをsectionに従属させる
+\counterwithin{definition}{section}
+\counterwithin{theorem}{section}
+\counterwithin{table}{section}
+
+% 表示形式を「○.○」に変更
+\renewcommand{\thedefinition}{\arabic{section}.\arabic{definition}}
+\renewcommand{\thetheorem}{\arabic{section}.\arabic{theorem}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
 \title{【中学数学】 データの活用}                % タイトル
 \author{}                     % 著者（空白でOK）
 \date{}                       % 日付（空白）
@@ -36,7 +49,7 @@
 % ========================================
 
 \input{sections/01_データの整理.tex}
-\input{sections/02_データの代表値.tex}
-\input{sections/03_データの散らばりと四分位範囲.tex}
+% \input{sections/02_データの代表値.tex}
+% \input{sections/03_データの散らばりと四分位範囲.tex}
 
 \end{document}

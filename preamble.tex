@@ -8,6 +8,7 @@
 \usepackage{empheq}
 \usepackage{amssymb}
 \usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
 \usepackage{tikz}
 \usepackage{textcomp}
 \usepackage{enumitem}
@@ -300,7 +301,7 @@
     left=10pt, right=10pt, top=8pt, bottom=8pt,
     fonttitle=\bfseries,
     code={\refstepcounter{definition}\if\relax\detokenize{#1}\relax\else\label{#1}\fi}, % #1が空でない場合のみラベル設定
-    title={Definition \thedefinition\if\relax\detokenize{#2}\relax\else\quad\textbf{#2}\fi}
+    title={Definition \thedefinition\if\relax\detokenize{#2}\relax\else\quad#2\fi}
 }
 
 % 定理環境（青系：薄い青背景 + 青枠）- 自動番号付き
@@ -314,7 +315,7 @@
     left=10pt, right=10pt, top=8pt, bottom=8pt,
     fonttitle=\bfseries,
     code={\refstepcounter{theorem}\if\relax\detokenize{#1}\relax\else\label{#1}\fi}, % #1が空でない場合のみラベル設定
-    title={Theorem \thetheorem\if\relax\detokenize{#2}\relax\else\quad\textbf{#2}\fi}
+    title={Theorem \thetheorem\if\relax\detokenize{#2}\relax\else\quad#2\fi}
 }
 
 % 問題環境（濃い灰色背景 + 太線）

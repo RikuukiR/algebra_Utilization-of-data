@@ -4,6 +4,7 @@
 
 \section{データの整理}
 
+% 度数分布表とヒストグラム
 \subsection{度数分布表とヒストグラム}
 
 \begin{definitionbox}[def:度数分布表]{\textbf{度数分布表}}
@@ -11,37 +12,40 @@
     データの範囲を適当に区切ったとき、各区間に含まれるデータの個数を \textbf{度数} といい、
     各区間にその区間の度数を対応させて整理した右のような表を \textbf{度数分布表} という.
 
-    \vspace{0.5em}
-
-    \textbf{用語：}
-    \begin{itemize}
-        \item \textbf{階級}：データを分けた区間
-        \item \textbf{階級値}：各階級の中央の値
-        \item \textbf{度数}：各階級に含まれるデータの個数
-    \end{itemize}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.4\textwidth}
     \centering
     \vspace{0pt}
-    \textbf{度数分布表}
 
-    \vspace{0.3em}
-    \begin{tabular}{|r|c|}
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{|r@{〜}l|c|}
     \hline
-    \textbf{階級（点）} & \textbf{度数（人）} \\
+    \multicolumn{2}{|c|}{\textbf{階級（cm）}} & \textbf{度数（人）} \\
     \hline
-    50〜60 & 2 \\
+    135{\scriptsize 以上} & 140{\scriptsize 未満} & 2 \\
     \hline
-    60〜70 & 6 \\
+    140 & 145 & 4 \\
     \hline
-    70〜80 & 9 \\
+    145 & 150 & 5 \\
     \hline
-    80〜90 & 3 \\
+    150 & 155 & 8 \\
     \hline
-    \textbf{計} & \textbf{20} \\
+    155 & 160 & 11 \\
+    \hline
+    160 & 165 & 9 \\
+    \hline
+    165 & 170 & 7 \\
+    \hline
+    170 & 175 & 4 \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{計}} & \textbf{50} \\
     \hline
     \end{tabular}
+    \caption{身長の度数分布表}
+    \label{tab:height_distribution}
+    \end{table}
 \end{minipage}
 \end{definitionbox}
 
@@ -51,161 +55,47 @@
 \end{definitionbox}
 
 \begin{definitionbox}[def:ヒストグラム]{\textbf{ヒストグラム}}
-    度数分布表を、柱状グラフで
+    度数分布表を、柱状のグラフで表したものを \textbf{ヒストグラム} という.
+
+    ヒストグラムの各長方形の横の長さは階級の幅を表し、高さは各階級の度数を表す.
 \end{definitionbox}
 
-\begin{example}[1]{度数分布表の作成}
-\begin{solution}
-階級の幅を10点として整理すると、次の度数分布表が得られる。
+\begin{definitionbox}[def:度数折れ線]{\textbf{度数折れ線}}
+    ヒストグラムの各長方形の上の辺の中点を結んでできる折れ線グラフを \textbf{度数折れ線} という。
 
-\vspace{1em}
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{階級（点）} & \textbf{階級値（点）} & \textbf{度数（人）} \\
-\hline
-50以上〜60未満 & 55 & 2 \\
-\hline
-60以上〜70未満 & 65 & 6 \\
-\hline
-70以上〜80未満 & 75 & 9 \\
-\hline
-80以上〜90未満 & 85 & 3 \\
-\hline
-\textbf{合計} & - & \textbf{20} \\
-\hline
-\end{tabular}
-\end{center}
-\end{solution}
+    ただし、度数折れ線をつくる時は、ヒストグラムの左右の両端に度数が0の階級があるものと考える。
+\end{definitionbox}
+\newpage
+
+% 追加例題
+\begin{example}[【教p.114 追加例題】]
+    表\ref{tab:height_distribution}において、次の問いに答えなさい。
+    \begin{enumerate}
+        \item 階級の幅は何か。
+        \item 階級の個数はいくつか。
+        \item 階級140cm以上145cm未満の度数はいくつか。
+        \item 階級140cm以上145cm未満の階級値はいくつか。
+    \end{enumerate}
 \end{example}
 
-\vspace{2em}
-
-\subsection{ヒストグラム}
-
-度数分布表を視覚的に表現するために、ヒストグラムを使います。
-
-\begin{definitionbox}{}{ヒストグラム}
-度数分布表をもとに、横軸に階級、縦軸に度数をとり、各階級の度数を長方形の柱で表したグラフ。
-\begin{itemize}
-\item 長方形の面積が度数を表す
-\item 階級の幅が等しい場合、柱の高さが度数を表す
-\item データの分布の様子が視覚的にわかりやすい
-\end{itemize}
-\end{definitionbox}
-
-\begin{problem}[度数分布表とヒストグラム]
-次のデータは、ある中学校の生徒30人の通学時間（分）である。
-
-\vspace{0.5em}
-\begin{center}
-15, 22, 8, 35, 18, 25, 12, 28, 20, 16, \\
-30, 14, 26, 19, 23, 11, 32, 17, 24, 21, \\
-27, 13, 29, 10, 31, 15, 20, 18, 25, 22
-\end{center}
-\vspace{0.5em}
-
-\begin{enumerate}
-\item 階級の幅を5分として度数分布表を作りなさい。
-\item 度数分布表をもとに、ヒストグラムを作成しなさい。
-\end{enumerate}
-\end{problem}
-
-\vspace{15cm}
-
+% 相対度数
 \subsection{相対度数}
 
-度数分布表では、各階級の度数がわかりますが、全体に対する割合を知りたいときには相対度数を使います。
+\begin{definitionbox}[def:相対度数]{\textbf{相対度数}}
+    度数の合計に対する各階級の度数の割合を \textbf{相対度数} という。
 
-\begin{definitionbox}{}{相対度数}
-各階級の度数が、全体の度数に対してどれだけの割合を占めているかを表す値。
-
-\[
-\text{相対度数} = \frac{\text{その階級の度数}}{\text{全体の度数（総度数）}}
-\]
-
-\begin{itemize}
-\item 相対度数の合計は常に1になる
-\item パーセントで表すこともある（相対度数×100）
-\end{itemize}
+    相対度数はふつう小数を用いて表す。
 \end{definitionbox}
 
-\begin{example}[2]
-例題1の度数分布表に相対度数を加えなさい。
+\begin{theorembox}[thm:相対度数]{\textbf{相対度数}}
+    相対度数は次の式で求められる。
 
-\begin{solution}
-総度数は20人なので、各階級の相対度数を計算する。
+    \[
+    \textbf{(相対度数)} = \dfrac{\textbf{(\answermath{その階級の度数})}}{\textbf{(\answermath{度数の合計})}}
+    \]
+\end{theorembox}
 
-\vspace{1em}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{階級（点）} & \textbf{階級値} & \textbf{度数（人）} & \textbf{相対度数} \\
-\hline
-50以上〜60未満 & 55 & 2 & $\frac{2}{20} = 0.10$ \\
-\hline
-60以上〜70未満 & 65 & 6 & $\frac{6}{20} = 0.30$ \\
-\hline
-70以上〜80未満 & 75 & 9 & $\frac{9}{20} = 0.45$ \\
-\hline
-80以上〜90未満 & 85 & 3 & $\frac{3}{20} = 0.15$ \\
-\hline
-\textbf{合計} & - & \textbf{20} & \textbf{1.00} \\
-\hline
-\end{tabular}
-\end{center}
 
-\vspace{1em}
-相対度数の合計は $0.10 + 0.30 + 0.45 + 0.15 = 1.00$ となる。
-\end{solution}
-\end{example}
 
-\vspace{2em}
 
-\begin{problem}[相対度数の計算]
-次の度数分布表について、相対度数を求めなさい。
-
-\vspace{1em}
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-\textbf{階級（cm）} & \textbf{度数（人）} \\
-\hline
-140以上〜150未満 & 3 \\
-\hline
-150以上〜160未満 & 8 \\
-\hline
-160以上〜170未満 & 12 \\
-\hline
-170以上〜180未満 & 5 \\
-\hline
-180以上〜190未満 & 2 \\
-\hline
-\textbf{合計} & \textbf{30} \\
-\hline
-\end{tabular}
-\end{center}
-\end{problem}
-
-\vspace{8cm}
-
-\subsection{累積度数}
-
-\begin{definitionbox}{}{累積度数}
-ある階級までの度数の合計。データの分布の累積的な傾向を知ることができる。
-
-\begin{itemize}
-\item 最小の階級から順に度数を足していく
-\item 最後の階級の累積度数は総度数と等しくなる
-\item 累積相対度数も同様に計算できる
-\end{itemize}
-\end{definitionbox}
-
-\vspace{1em}
-
-\begin{problem}[累積度数]
-例題1の度数分布表に累積度数を加えなさい。
-\end{problem}
-
-\vspace{8cm}
-
+\newpage

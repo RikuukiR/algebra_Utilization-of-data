@@ -64,5 +64,12 @@
 
   // エラー表示設定
   "latex-workshop.message.error.show": true,
-  "latex-workshop.message.warning.show": false
+  "latex-workshop.message.warning.show": false,
+
+  // Linter設定（ChkTeXを無効化）
+  "latex-workshop.linting.chktex.enabled": false,
+  "latex-workshop.linting.lacheck.enabled": false,
+
+  // 問題パネルの設定
+  "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false
 }

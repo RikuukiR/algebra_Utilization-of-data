@@ -1,0 +1,68 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "uplatex",
+            "command": "uplatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "dvipdfmx",
+            "args": [
+                "%DOCFILE%.dvi"
+            ]
+        },
+        {
+            "name": "make",
+            "command": "make",
+            "args": [
+                "all"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "make",
+            "tools": [
+                "make"
+            ]
+        },
+        {
+            "name": "uplatex -> dvipdfmx",
+            "tools": [
+                "uplatex",
+                "uplatex",
+                "dvipdfmx"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "make",
+    "latex-workshop.latex.outDir": ".",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.log",
+        "*.dvi",
+        "*.synctex.gz",
+        "*.fls",
+        "*.fdb_latexmk",
+        "*.toc",
+        "*.out"
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "files.exclude": {
+        "**/*.aux": true,
+        "**/*.log": true,
+        "**/*.dvi": true,
+        "**/*.synctex.gz": true,
+        "**/*.fls": true,
+        "**/*.fdb_latexmk": true
+    }
+}
+

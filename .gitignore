@@ -26,6 +26,7 @@
 *.swp
 *.swo
 *~
-.vscode/
 .idea/
+
+# Note: .vscode/ is included for project-specific settings
 

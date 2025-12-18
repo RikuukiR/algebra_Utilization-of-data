@@ -1,0 +1,184 @@
+% ========================================
+% 第1節 データの整理
+% ========================================
+
+\section{データの整理}
+
+\subsection{度数分布表}
+
+データを整理するために、度数分布表を使います。
+
+\begin{definitionbox}{}{度数分布表}
+データをいくつかの階級に分け、各階級に含まれるデータの個数（度数）を表にまとめたもの。
+\begin{itemize}
+\item \textbf{階級}：データを分けた区間
+\item \textbf{階級値}：各階級の中央の値
+\item \textbf{度数}：各階級に含まれるデータの個数
+\item \textbf{階級の幅}：各階級の範囲の大きさ
+\end{itemize}
+\end{definitionbox}
+
+\begin{example}[1]
+次のデータは、あるクラス20人の数学のテストの点数である。このデータを階級の幅を10点として度数分布表を作りなさい。
+
+\vspace{0.5em}
+\begin{center}
+65, 72, 58, 81, 76, 69, 54, 77, 63, 70, \\
+68, 75, 82, 71, 66, 79, 73, 67, 74, 80
+\end{center}
+\vspace{0.5em}
+
+\begin{solution}
+階級の幅を10点として整理すると、次の度数分布表が得られる。
+
+\vspace{1em}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{階級（点）} & \textbf{階級値（点）} & \textbf{度数（人）} \\
+\hline
+50以上〜60未満 & 55 & 2 \\
+\hline
+60以上〜70未満 & 65 & 6 \\
+\hline
+70以上〜80未満 & 75 & 9 \\
+\hline
+80以上〜90未満 & 85 & 3 \\
+\hline
+\textbf{合計} & - & \textbf{20} \\
+\hline
+\end{tabular}
+\end{center}
+\end{solution}
+\end{example}
+
+\vspace{2em}
+
+\subsection{ヒストグラム}
+
+度数分布表を視覚的に表現するために、ヒストグラムを使います。
+
+\begin{definitionbox}{}{ヒストグラム}
+度数分布表をもとに、横軸に階級、縦軸に度数をとり、各階級の度数を長方形の柱で表したグラフ。
+\begin{itemize}
+\item 長方形の面積が度数を表す
+\item 階級の幅が等しい場合、柱の高さが度数を表す
+\item データの分布の様子が視覚的にわかりやすい
+\end{itemize}
+\end{definitionbox}
+
+\begin{problem}[度数分布表とヒストグラム]
+次のデータは、ある中学校の生徒30人の通学時間（分）である。
+
+\vspace{0.5em}
+\begin{center}
+15, 22, 8, 35, 18, 25, 12, 28, 20, 16, \\
+30, 14, 26, 19, 23, 11, 32, 17, 24, 21, \\
+27, 13, 29, 10, 31, 15, 20, 18, 25, 22
+\end{center}
+\vspace{0.5em}
+
+\begin{enumerate}
+\item 階級の幅を5分として度数分布表を作りなさい。
+\item 度数分布表をもとに、ヒストグラムを作成しなさい。
+\end{enumerate}
+\end{problem}
+
+\vspace{15cm}
+
+\subsection{相対度数}
+
+度数分布表では、各階級の度数がわかりますが、全体に対する割合を知りたいときには相対度数を使います。
+
+\begin{definitionbox}{}{相対度数}
+各階級の度数が、全体の度数に対してどれだけの割合を占めているかを表す値。
+
+\[
+\text{相対度数} = \frac{\text{その階級の度数}}{\text{全体の度数（総度数）}}
+\]
+
+\begin{itemize}
+\item 相対度数の合計は常に1になる
+\item パーセントで表すこともある（相対度数×100）
+\end{itemize}
+\end{definitionbox}
+
+\begin{example}[2]
+例題1の度数分布表に相対度数を加えなさい。
+
+\begin{solution}
+総度数は20人なので、各階級の相対度数を計算する。
+
+\vspace{1em}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{階級（点）} & \textbf{階級値} & \textbf{度数（人）} & \textbf{相対度数} \\
+\hline
+50以上〜60未満 & 55 & 2 & $\frac{2}{20} = 0.10$ \\
+\hline
+60以上〜70未満 & 65 & 6 & $\frac{6}{20} = 0.30$ \\
+\hline
+70以上〜80未満 & 75 & 9 & $\frac{9}{20} = 0.45$ \\
+\hline
+80以上〜90未満 & 85 & 3 & $\frac{3}{20} = 0.15$ \\
+\hline
+\textbf{合計} & - & \textbf{20} & \textbf{1.00} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+相対度数の合計は $0.10 + 0.30 + 0.45 + 0.15 = 1.00$ となる。
+\end{solution}
+\end{example}
+
+\vspace{2em}
+
+\begin{problem}[相対度数の計算]
+次の度数分布表について、相対度数を求めなさい。
+
+\vspace{1em}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{階級（cm）} & \textbf{度数（人）} \\
+\hline
+140以上〜150未満 & 3 \\
+\hline
+150以上〜160未満 & 8 \\
+\hline
+160以上〜170未満 & 12 \\
+\hline
+170以上〜180未満 & 5 \\
+\hline
+180以上〜190未満 & 2 \\
+\hline
+\textbf{合計} & \textbf{30} \\
+\hline
+\end{tabular}
+\end{center}
+\end{problem}
+
+\vspace{8cm}
+
+\subsection{累積度数}
+
+\begin{definitionbox}{}{累積度数}
+ある階級までの度数の合計。データの分布の累積的な傾向を知ることができる。
+
+\begin{itemize}
+\item 最小の階級から順に度数を足していく
+\item 最後の階級の累積度数は総度数と等しくなる
+\item 累積相対度数も同様に計算できる
+\end{itemize}
+\end{definitionbox}
+
+\vspace{1em}
+
+\begin{problem}[累積度数]
+例題1の度数分布表に累積度数を加えなさい。
+\end{problem}
+
+\vspace{8cm}
+

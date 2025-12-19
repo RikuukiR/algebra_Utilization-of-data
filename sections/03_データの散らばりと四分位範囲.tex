@@ -8,13 +8,13 @@
 
 % 範囲
 \begin{definitionbox}[def:範囲]{\textbf{範囲}}
-    データのとる値のうち、最大のものから最小のものをひいた値を \textbf{範囲} または \textbf{レンジ} という。
+    データのとる値のうち, 最大のものから最小のものをひいた値を \textbf{範囲} または \textbf{レンジ} という.
 
-    範囲は、\uwave{データの散らばりの程度}を表す。
+    範囲は, \uwave{データの散らばりの程度}を表す.
 \end{definitionbox}
 
 \begin{theorembox}[thm:範囲]{\textbf{範囲}}
-    範囲は次の式で求められる。
+    範囲は次の式で求められる.
     \[
     \textbf{(範囲)} = \textbf{(最大値)} - \textbf{(最小値)}
     \]
@@ -22,55 +22,138 @@
 
 \subsection{四分位数}
 
-次のデータは、ある中学校のA組とB組のそれぞれ20人に行ったテストの結果を、得点の低い順に並べたものである。（単位は点）
+次のデータは, ある中学校のA組とB組のそれぞれ20人に行ったテストの結果を, 得点の低い順に並べたものである.（単位は点）
 
-\begin{tcolorbox}[colback=white, colframe=black, boxrule=1.5pt, arc=3mm, left=10pt, right=10pt, top=8pt, bottom=8pt, boxsep=5pt, enhanced, borderline={1.5pt}{0pt}{black, dashed}, title=A組のテスト結果, fonttitle=\bfseries, coltitle=black, colbacktitle=white, attach boxed title to top left={yshift=-2mm, xshift=5mm}]
-26 \quad 31 \quad 35 \quad 39 \quad 44 \quad 48 \quad 52 \quad 55 \quad 57 \quad 63 \quad 67 \quad 68 \quad 74 \quad 75 \quad 78 \quad 82 \quad 85 \quad 87 \quad 92 \quad 93
-\end{tcolorbox}
+\begin{table}[H]
+    \centering
+    \begin{tcolorbox}[colback=white, colframe=black, boxrule=1.5pt, arc=3mm, left=10pt, right=10pt, top=8pt, bottom=8pt, boxsep=5pt, enhanced, borderline={1.5pt}{0pt}{black, dashed}, title=A組のテスト結果, fonttitle=\bfseries, coltitle=black, colbacktitle=white, attach boxed title to top left={yshift=-2mm, xshift=5mm}]
+    26 \quad 31 \quad 35 \quad 39 \quad 44 \quad 48 \quad 52 \quad 55 \quad 57 \quad 63 \quad 67 \quad 68 \quad 74 \quad 75 \quad 78 \quad 82 \quad 85 \quad 87 \quad 92 \quad 93
+    \end{tcolorbox}
 
-\vspace{0.5em}
+    \vspace{0.5em}
 
-\begin{tcolorbox}[colback=white, colframe=black, boxrule=1.5pt, arc=3mm, left=10pt, right=10pt, top=8pt, bottom=8pt, boxsep=5pt, enhanced, borderline={1.5pt}{0pt}{black, dashed}, title=B組のテスト結果, fonttitle=\bfseries, coltitle=black, colbacktitle=white, attach boxed title to top left={yshift=-2mm, xshift=5mm}]
-27 \quad 42 \quad 47 \quad 49 \quad 51 \quad 53 \quad 54 \quad 56 \quad 59 \quad 64 \quad 66 \quad 68 \quad 69 \quad 69 \quad 72 \quad 76 \quad 79 \quad 82 \quad 85 \quad 94
-\end{tcolorbox}
+    \begin{tcolorbox}[colback=white, colframe=black, boxrule=1.5pt, arc=3mm, left=10pt, right=10pt, top=8pt, bottom=8pt, boxsep=5pt, enhanced, borderline={1.5pt}{0pt}{black, dashed}, title=B組のテスト結果, fonttitle=\bfseries, coltitle=black, colbacktitle=white, attach boxed title to top left={yshift=-2mm, xshift=5mm}]
+    27 \quad 42 \quad 47 \quad 49 \quad 51 \quad 53 \quad 54 \quad 56 \quad 59 \quad 64 \quad 66 \quad 68 \quad 69 \quad 69 \quad 72 \quad 76 \quad 79 \quad 82 \quad 85 \quad 94
+    \end{tcolorbox}
+    \caption{}
+    \label{tab:test_results}
+\end{table}
 
 % 四分位数
 \begin{definitionbox}[def:四分位数]{\textbf{四分位数}}
-    データの値を大きさの順に並べたとき、4等分する位置にくる値を \textbf{四分位数} という。
-    四分位数は小さい方から順に \textbf{第1四分位数}, \textbf{第2四分位数}, \textbf{第3四分位数} という。
-    第2四分位数は中央値のことである。
+    データの値を大きさの順に並べたとき, 4等分する位置にくる値を \textbf{四分位数} という.
+    四分位数は小さい方から順に \textbf{第1四分位数}, \textbf{第2四分位数}, \textbf{第3四分位数} という.
+    第2四分位数は中央値のことである.
 \end{definitionbox}
+
+% 例2
+\begin{example}[【教p.124 例2】]
+    表\ref{tab:test_results}において, 四分位数を求めよ.
+\end{example}
+
+\begin{proof}\mbox{}\\
+    中央値すなわち第2四分位数は
+    \begin{alignanswer*}
+        \dfrac{63 + 67}{2} = 65 \text{(点)}
+    \end{alignanswer*}
+    第1四分位数は
+    \begin{alignanswer*}
+        \dfrac{44 + 48}{2} = 46 \text{(点)}
+    \end{alignanswer*}
+    第3四分位数は
+    \begin{alignanswer*}
+        \dfrac{78 + 82}{2} = 80 \text{(点)}
+    \end{alignanswer*}
+    \vspace{-10em}
+\end{proof}
+
+% 練習10
+\begin{exercise}[【教p.124 練習10】]
+    表\ref{tab:test_results}において, B組のデータの四分位数を求めよ.
+\end{exercise}
+
+\begin{proof}\mbox{}\\
+    中央値すなわち第2四分位数は
+    \begin{alignanswer*}
+        \dfrac{64 + 66}{2} = 65 \text{(点)}
+    \end{alignanswer*}
+    第1四分位数は
+    \begin{alignanswer*}
+        \dfrac{51 + 53}{2} = 52 \text{(点)}
+    \end{alignanswer*}
+    第3四分位数は
+    \begin{alignanswer*}
+        \dfrac{72 + 76}{2} = 74 \text{(点)}
+    \end{alignanswer*}
+    \vspace{-10em}
+\end{proof}
 \newpage
 
 \subsection{四分位範囲}
 
 % 四分位範囲
 \begin{definitionbox}[def:四分位範囲]{\textbf{四分位範囲}}
-    第3四分位数から第1四分位数をひいた差を \textbf{四分位範囲} という。
+    第3四分位数から第1四分位数をひいた差を \textbf{四分位範囲} という.
 \end{definitionbox}
 \vspace{1em}
 
-四分位範囲は、範囲よりもより \uwave{中央値に近いところ} でのデータの散らばりの程度を調べることができる。
+四分位範囲は, 範囲よりもより \uwave{中央値に近いところ} でのデータの散らばりの程度を調べることができる.
 
 \begin{theorembox}[thm:四分位範囲]{\textbf{四分位範囲}}
-    四分位範囲は次の式で求められる。
+    四分位範囲は次の式で求められる.
     \[
     \textbf{(四分位範囲)} = \textbf{(第3四分位数)} - \textbf{(第1四分位数)}
     \]
 \end{theorembox}
 \vspace{1em}
 
-第1四分位数と第3四分位数の間の区間には、\uwave{データ全体のほぼ半分} が入っており、データの中には極端に大きな値や小さな値がっても、
-影響を受けにくい。
+第1四分位数と第3四分位数の間の区間には, \uwave{データ全体のほぼ半分} が入っており, データの中には極端に大きな値や小さな値がっても,
+影響を受けにくい.
 
-一般に、データが中央付近に集中しているほど、四分位範囲は小さくなり、データの散らばりの程度は小さいといえる。
+一般に, データが中央付近に集中しているほど, 四分位範囲は小さくなり, データの散らばりの程度は小さいといえる.
+
+% 例3
+\begin{example}[【教p.125 例3】]
+    表\ref{tab:test_results}において, 四分位範囲を求めよ.
+\end{example}
+
+\begin{proof}\mbox{}\\
+    第1四分位数は46点, 第3四分位数は80点であるから,
+    \begin{alignanswer*}
+        \textbf{(四分位範囲)} = 80 - 46 = 34 \text{(点)}
+    \end{alignanswer*}
+    \vspace{-12em}
+\end{proof}
+
+% 練習10
+\begin{exercise}[【教p.125 練習11改訂】]
+    表\ref{tab:test_results}において, 次の問いに答えよ.
+    \begin{enumerate}
+        \item B組のデータ四分位範囲を求めよ.
+        \item A組とB組の四分位範囲から, データの散らばりの程度が大きいのはどちらの組みである
+                と考えられるか.理由も含めて答えよ.
+    \end{enumerate}
+\end{exercise}
+
+\begin{proof}\mbox{}\\
+    (1)B組のデータの四分位範囲は
+    \begin{alignanswer*}
+        \textbf{(四分位範囲)} = 74 - 52 = 22 \text{(点)}
+    \end{alignanswer*}
+
+    \noindent
+    (2)\ifshowanswer\textcolor{blue}{A組の四分位範囲は34点, B組の四分位範囲は22点であるから,A組のデータの四分位範囲の方が大きい.}\else\vspace{2em}\fi
+
+    \ifshowanswer\textcolor{blue}{よって, データの散らばりの程度が大きいのはA組である.}\else\vspace{2em}\fi
+    \vspace{-10em}
+\end{proof}
 \newpage
 
 \subsection{箱ひげ図}
 
-四分位数や四分位範囲を使って、データの分布を図で表してみよう。
+四分位数や四分位範囲を使って, データの分布を図で表してみよう.
 
-データの散らばりのようすを図で表すと、次のようになる。
+データの散らばりのようすを図で表すと, 次のようになる.
 \vspace{8em}
 
 \begin{figure}[H]
@@ -94,9 +177,24 @@
 
 % 箱ひげ図
 \begin{definitionbox}[def:箱ひげ図]{\textbf{箱ひげ図}}
-    図\ref{fig:boxplot}を \textbf{箱ひげ図} という。
-    箱ひげ図は、データの最小値、第1四分位数、中央値(第2四分位数)、第3四分位数、最大値を箱とひげで表している。
-    箱の横の長さは、四分位範囲を表す。
+    図\ref{fig:boxplot}を \textbf{箱ひげ図} という.
+    箱ひげ図は, データの最小値, 第1四分位数, 中央値(第2四分位数), 第3四分位数, 最大値を箱とひげで表している.
+    箱の横の長さは, 四分位範囲を表す.
 \end{definitionbox}
+
+複数のデータの散らばりのようすを比較する場合は, 箱ひげ図を利用するとよい.
+
+箱ひげ図の「ひげ」は, 最小値や最大値が他のデータの値と大きく離れている場合に, 影響を受けて長くなる.
+
+一方, 「箱」はその影響を受けにくい.
+\vspace{1.5em}
+
+次に, 箱ひげ図とヒストグラムの関係について考えてみよう.
+
+結論から言おう.ヒストグラムの山の位置と, 箱ひげ図の箱の位置がだいたい対応し,
+ヒストグラムのすそにあたる部分が, 箱ひげ図のひげの部分に対応する.
+ヒストグラムのすそが左に伸びていれば, 箱ひげ図のひげも左に伸びる.
+
+箱ひげ図では, ヒストグラムほどにはデータの散らばりのようすが表現されないが, 大まかなようすを知ることができる.
 
 \newpage

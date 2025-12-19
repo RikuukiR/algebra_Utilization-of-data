@@ -9,8 +9,9 @@
 
 \begin{definitionbox}[def:度数分布表]{\textbf{度数分布表}}
 \begin{minipage}[t]{0.55\textwidth}
-    データの範囲を適当に区切ったとき、各区間に含まれるデータの個数を \textbf{度数} といい、
-    各区間にその区間の度数を対応させて整理した右のような表を \textbf{度数分布表} という.
+    データの範囲を適当に区切ったとき, 各区間に含まれるデータの個数を \textbf{度数} といい,
+
+    各区間にその区間の度数を対応させて整理した右のような表を \textbf{度数分布表} という .
 
 \end{minipage}%
 \hfill
@@ -50,31 +51,45 @@
 \end{definitionbox}
 
 \begin{definitionbox}[def:階級]{\textbf{階級}}
-    度数分布表において、区切られた各区間を \textbf{階級} 、区間の幅を \textbf{階級の幅} 、
-    各階級の中央の値を \textbf{階級値} という.
+    度数分布表において, 区切られた各区間を \textbf{階級} , 区間の幅を \textbf{階級の幅} ,
+
+    各階級の中央の値を \textbf{階級値} という .
 \end{definitionbox}
 
 \begin{definitionbox}[def:ヒストグラム]{\textbf{ヒストグラム}}
-    度数分布表を、柱状のグラフで表したものを \textbf{ヒストグラム} という.
+    度数分布表を, 柱状のグラフで表したものを \textbf{ヒストグラム} という .
 
-    ヒストグラムの各長方形の横の長さは階級の幅を表し、高さは各階級の度数を表す.
+    \vspace{0.5em}
+    ヒストグラムの各長方形の横の長さは階級の幅を表し, 高さは各階級の度数を表す .
 \end{definitionbox}
 
 \begin{definitionbox}[def:度数折れ線]{\textbf{度数折れ線}}
-    ヒストグラムの各長方形の上の辺の中点を結んでできる折れ線グラフを \textbf{度数折れ線} という。
+    ヒストグラムの各長方形の上の辺の中点を結んでできる折れ線グラフを \textbf{度数折れ線} という .
 
-    ただし、度数折れ線をつくる時は、ヒストグラムの左右の両端に度数が0の階級があるものと考える。
+    \vspace{0.5em}
+    ただし, 度数折れ線をつくる時は, ヒストグラムの左右の両端に度数が0の階級があるものと考える .
 \end{definitionbox}
 \newpage
 
-% 追加例題
-\begin{example}[【教p.114 追加例題】]
-    表\ref{tab:height_distribution}において、次の問いに答えなさい。
+% 追加例題1
+\begin{example}[【教p.114 追加例題1】]
+    表\ref{tab:height_distribution}において, 次の問いに答えなさい .
     \begin{enumerate}
-        \item 階級の幅は何か。
-        \item 階級の個数はいくつか。
-        \item 階級140cm以上145cm未満の度数はいくつか。
-        \item 階級140cm以上145cm未満の階級値はいくつか。
+        \item 階級の幅は何か .
+
+        \vspace{2em}
+
+        \item 階級の個数はいくつか .
+
+        \vspace{2em}
+
+        \item 階級140cm以上145cm未満の度数はいくつか .
+
+        \vspace{2em}
+
+        \item 階級140cm以上145cm未満の階級値はいくつか .
+
+        \vspace{2em}
     \end{enumerate}
 \end{example}
 
@@ -82,20 +97,78 @@
 \subsection{相対度数}
 
 \begin{definitionbox}[def:相対度数]{\textbf{相対度数}}
-    度数の合計に対する各階級の度数の割合を \textbf{相対度数} という。
+    度数の合計に対する各階級の度数の割合を \textbf{相対度数} という .
 
-    相対度数はふつう小数を用いて表す。
+    \vspace{0.5em}
+    相対度数はふつう小数を用いて表す .
 \end{definitionbox}
 
 \begin{theorembox}[thm:相対度数]{\textbf{相対度数}}
-    相対度数は次の式で求められる。
+    相対度数は次の式で求められる .
 
     \[
-    \textbf{(相対度数)} = \dfrac{\textbf{(\answermath{その階級の度数})}}{\textbf{(\answermath{度数の合計})}}
+    \textbf{(相対度数)} = \, \dfrac{\textbf{(\answermath{\hspace{6em}})}}{\textbf{(\answermath{\hspace{6em}})}} \,
     \]
+
+    \vspace{1em}
 \end{theorembox}
+\vspace{2em}
+
+Definition\ref{def:相対度数}より, 相対度数の合計は必ず \hspace{3em} になる .
+
+\vspace{1em}
+
+また, 相対度数を使用するメリットは, 度数の合計が異なる複数の分布について,
+
+\vspace{0.5em}
+
+\hspace{3em} を比較することができる .
 
 
+% 累積度数
+\subsection{累積度数}
 
+\begin{definitionbox}[def:累積度数]{\textbf{累積度数}}
+    度数分布表において, 各階級以下または各階級以上の階級の度数をたし合わせたものを
+
+    \textbf{累積度数} という .
+
+    \vspace{0.5em}
+    また, 累積度数を表にまとめたものを \textbf{累積度数分布表} という .
+\end{definitionbox}
+
+% 累積相対度数
+\begin{definitionbox}[def:累積相対度数]{\textbf{累積相対度数}}
+    累積度数についても, 度数の合計に対する各階級の累積度数の割合を考えることがある .
+
+    \vspace{0.5em}
+    この割合を \textbf{累積相対度数} という .
+\end{definitionbox}
+
+% 追加例題2
+\begin{example}[【教p.119 追加例題2】]
+    表\ref{tab:height_distribution}において, 次の問いに答えなさい .
+    \begin{enumerate}
+        \item 各階級の相対度数を求めなさい .
+
+        \vspace{4em}
+
+        \item 累積度数の列を加え, 累積度数分布表を作成しなさい .
+
+        \vspace{4em}
+
+        \item 累積相対度数を求めなさい .
+
+        \vspace{4em}
+
+        \item 身長が150cm以上の人の割合は何\%か求めなさい .
+
+        \vspace{4em}
+    \end{enumerate}
+\end{example}
+
+\begin{proof}
+    
+\end{proof}
 
 \newpage

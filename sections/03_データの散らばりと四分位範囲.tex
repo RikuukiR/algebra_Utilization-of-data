@@ -4,18 +4,20 @@
 
 \section{データの散らばりと四分位範囲}
 
-データの代表値だけでは、データの特徴を十分に表せないことがあります。
-データがどれだけ散らばっているかを表す値として、範囲、四分位数、四分位範囲などがあります。
+データの代表値だけでは, データの特徴を十分に表せないことがあります .
+
+データがどれだけ散らばっているかを表す値として, 範囲, 四分位数, 四分位範囲などがあります .
 
 \subsection{範囲（レンジ）}
 
 \begin{definitionbox}{}{範囲（range）}
-データの最大値と最小値の差。
+データの最大値と最小値の差 .
 
 \[
 \text{範囲} = \text{最大値} - \text{最小値}
 \]
 
+\vspace{0.5em}
 \textbf{特徴：}
 \begin{itemize}
 \item 計算が簡単
@@ -27,20 +29,20 @@
 \vspace{1em}
 
 \begin{example}[7]
-次のデータの範囲を求めなさい。
+次のデータの範囲を求めなさい .
 
 \[
-12, 18, 15, 22, 14, 20, 16, 19
+12, \, 18, \, 15, \, 22, \, 14, \, 20, \, 16, \, 19
 \]
 
 \begin{solution}
-最大値は22、最小値は12なので、
+最大値は22, 最小値は12なので,
 
 \[
 \text{範囲} = 22 - 12 = 10
 \]
 
-よって、範囲は \textcolor{blue}{\textbf{10}} である。
+よって, 範囲は \textcolor{blue}{\textbf{10}} である .
 \end{solution}
 \end{example}
 
@@ -48,11 +50,12 @@
 
 \subsection{四分位数}
 
-データを4等分する位置の値を四分位数といいます。
+データを4等分する位置の値を四分位数といいます .
 
 \begin{definitionbox}{}{四分位数（quartile）}
-データを小さい順に並べたとき、データを4等分する3つの値。
+データを小さい順に並べたとき, データを4等分する3つの値 .
 
+\vspace{0.5em}
 \begin{itemize}
 \item \textbf{第1四分位数（$Q_1$）}：下位25\%の位置の値
 \item \textbf{第2四分位数（$Q_2$）}：下位50\%の位置の値（中央値と同じ）
@@ -92,58 +95,62 @@
 \item 中央値より大きいデータの中央値が $Q_3$
 \end{enumerate}
 
+\vspace{0.5em}
 \textbf{注意：}
 \begin{itemize}
-\item データの個数が奇数の場合、中央値は含めない
-\item データの個数が偶数の場合、半分に分けて考える
+\item データの個数が奇数の場合, 中央値は含めない
+\item データの個数が偶数の場合, 半分に分けて考える
 \end{itemize}
 \end{tcolorbox}
 
 \vspace{2em}
 
 \begin{example}[8]
-次のデータの四分位数を求めなさい。
+次のデータの四分位数を求めなさい .
 
 \[
-8, 12, 15, 10, 18, 14, 20, 11, 16, 13, 19
+8, \, 12, \, 15, \, 10, \, 18, \, 14, \, 20, \, 11, \, 16, \, 13, \, 19
 \]
 
 \begin{solution}
 \textbf{Step 1:} データを小さい順に並べる
 
 \[
-8, 10, 11, 12, 13, \textcolor{blue}{\textbf{14}}, 15, 16, 18, 19, 20
+8, \, 10, \, 11, \, 12, \, 13, \, \textcolor{blue}{\textbf{14}}, \, 15, \, 16, \, 18, \, 19, \, 20
 \]
 
-データは11個（奇数）なので、6番目の値が中央値。
+\vspace{0.5em}
+データは11個（奇数）なので, 6番目の値が中央値 .
 
 \[
 Q_2 = 14
 \]
 
-\vspace{1em}
+\vspace{1.5em}
 
 \textbf{Step 2:} $Q_1$ を求める（中央値より小さいデータ）
 
 \[
-8, 10, \textcolor{red}{\textbf{11}}, 12, 13
+8, \, 10, \, \textcolor{red}{\textbf{11}}, \, 12, \, 13
 \]
 
-5個（奇数）なので、3番目の値が $Q_1$。
+\vspace{0.5em}
+5個（奇数）なので, 3番目の値が $Q_1$ .
 
 \[
 Q_1 = 11
 \]
 
-\vspace{1em}
+\vspace{1.5em}
 
 \textbf{Step 3:} $Q_3$ を求める（中央値より大きいデータ）
 
 \[
-15, 16, \textcolor{red}{\textbf{18}}, 19, 20
+15, \, 16, \, \textcolor{red}{\textbf{18}}, \, 19, \, 20
 \]
 
-5個（奇数）なので、3番目の値が $Q_3$。
+\vspace{0.5em}
+5個（奇数）なので, 3番目の値が $Q_3$ .
 
 \[
 Q_3 = 18
@@ -151,21 +158,21 @@ Q_3 = 18
 
 \vspace{1em}
 
-よって、$Q_1 = \textcolor{blue}{\textbf{11}}$、$Q_2 = \textcolor{blue}{\textbf{14}}$、$Q_3 = \textcolor{blue}{\textbf{18}}$ である。
+よって, $Q_1 = \textcolor{blue}{\textbf{11}}$, $Q_2 = \textcolor{blue}{\textbf{14}}$, $Q_3 = \textcolor{blue}{\textbf{18}}$ である .
 \end{solution}
 \end{example}
 
 \newpage
 
 \begin{problem}[四分位数の計算]
-次の各データの四分位数 $Q_1$、$Q_2$、$Q_3$ を求めなさい。
+次の各データの四分位数 $Q_1$, $Q_2$, $Q_3$ を求めなさい .
 
 \begin{enumerate}
-\item $5, 8, 12, 15, 18, 20, 22, 25, 28$
-\vspace{6cm}
+\item $5, \, 8, \, 12, \, 15, \, 18, \, 20, \, 22, \, 25, \, 28$
+\vspace{8cm}
 
-\item $10, 14, 16, 18, 20, 22, 24, 26, 28, 30$
-\vspace{6cm}
+\item $10, \, 14, \, 16, \, 18, \, 20, \, 22, \, 24, \, 26, \, 28, \, 30$
+\vspace{8cm}
 \end{enumerate}
 \end{problem}
 
@@ -174,14 +181,16 @@ Q_3 = 18
 \subsection{四分位範囲と四分位偏差}
 
 \begin{definitionbox}{}{四分位範囲（IQR）}
-第3四分位数と第1四分位数の差。
+第3四分位数と第1四分位数の差 .
 
 \[
 \text{四分位範囲} = Q_3 - Q_1
 \]
 
-データの中央50\%の散らばり具合を表す。
+\vspace{0.5em}
+データの中央50\%の散らばり具合を表す .
 
+\vspace{0.5em}
 \textbf{特徴：}
 \begin{itemize}
 \item 極端な値の影響を受けにくい
@@ -193,37 +202,41 @@ Q_3 = 18
 \vspace{1em}
 
 \begin{definitionbox}{}{四分位偏差}
-四分位範囲の半分の値。
+四分位範囲の半分の値 .
 
 \[
-\text{四分位偏差} = \frac{Q_3 - Q_1}{2}
+\text{四分位偏差} = \, \frac{Q_3 - Q_1}{2} \,
 \]
 
-データの散らばりを表す別の指標。
+\vspace{0.5em}
+データの散らばりを表す別の指標 .
 \end{definitionbox}
 
 \vspace{2em}
 
 \begin{example}[9]
-例題8のデータについて、四分位範囲と四分位偏差を求めなさい。
+例題8のデータについて, 四分位範囲と四分位偏差を求めなさい .
 
 \begin{solution}
-例題8より、$Q_1 = 11$、$Q_3 = 18$ なので、
+例題8より, $Q_1 = 11$, $Q_3 = 18$ なので,
 
 \begin{align*}
-\text{四分位範囲} &= Q_3 - Q_1 \\
-&= 18 - 11 \\
+\text{四分位範囲} &= Q_3 - Q_1 \\[0.8em]
+&= 18 - 11 \\[0.8em]
 &= 7
 \end{align*}
 
+\vspace{1em}
+
 \begin{align*}
-\text{四分位偏差} &= \frac{Q_3 - Q_1}{2} \\
-&= \frac{18 - 11}{2} \\
-&= \frac{7}{2} \\
+\text{四分位偏差} &= \, \frac{Q_3 - Q_1}{2} \, \\[1em]
+&= \, \frac{18 - 11}{2} \, \\[1em]
+&= \, \frac{7}{2} \, \\[1em]
 &= 3.5
 \end{align*}
 
-よって、四分位範囲は \textcolor{blue}{\textbf{7}}、四分位偏差は \textcolor{blue}{\textbf{3.5}} である。
+\vspace{0.5em}
+よって, 四分位範囲は \textcolor{blue}{\textbf{7}}, 四分位偏差は \textcolor{blue}{\textbf{3.5}} である .
 \end{solution}
 \end{example}
 
@@ -231,10 +244,10 @@ Q_3 = 18
 
 \subsection{箱ひげ図}
 
-四分位数を使って、データの分布を視覚的に表したグラフを箱ひげ図といいます。
+四分位数を使って, データの分布を視覚的に表したグラフを箱ひげ図といいます .
 
 \begin{definitionbox}{}{箱ひげ図（box plot）}
-データの最小値、$Q_1$、$Q_2$、$Q_3$、最大値の5つの値を使って、データの分布を表すグラフ。
+データの最小値, $Q_1$, $Q_2$, $Q_3$, 最大値の5つの値を使って, データの分布を表すグラフ .
 
 \vspace{1em}
 \begin{center}
@@ -265,6 +278,7 @@ Q_3 = 18
 \end{tikzpicture}
 \end{center}
 
+\vspace{0.5em}
 \textbf{読み取れる情報：}
 \begin{itemize}
 \item データの中央値と散らばり
@@ -276,19 +290,27 @@ Q_3 = 18
 \vspace{2em}
 
 \begin{problem}[四分位範囲と箱ひげ図]
-2つのクラスA、Bで数学のテストを行った。結果は次の通りである。
+2つのクラスA, Bで数学のテストを行った . 結果は次の通りである .
 
-\textbf{クラスA：} 最小値50点、$Q_1$65点、$Q_2$72点、$Q_3$80点、最大値95点
+\vspace{0.5em}
+\textbf{クラスA：} 最小値50点, $Q_1$65点, $Q_2$72点, $Q_3$80点, 最大値95点
 
-\textbf{クラスB：} 最小値55点、$Q_1$62点、$Q_2$70点、$Q_3$78点、最大値90点
+\vspace{0.5em}
+\textbf{クラスB：} 最小値55点, $Q_1$62点, $Q_2$70点, $Q_3$78点, 最大値90点
 
+\vspace{1em}
 \begin{enumerate}
-\item 各クラスの四分位範囲を求めなさい。
-\item 各クラスの箱ひげ図を描き、成績の分布を比較しなさい。
+\item 各クラスの四分位範囲を求めなさい .
+
+\vspace{5cm}
+
+\item 各クラスの箱ひげ図を描き, 成績の分布を比較しなさい .
+
+\vspace{10cm}
 \end{enumerate}
 \end{problem}
 
-\vspace{12cm}
+\vspace{2cm}
 
 \subsection{まとめ：データの散らばりを表す指標}
 
@@ -302,7 +324,7 @@ Q_3 = 18
 \hline
 四分位範囲 & $Q_3 - Q_1$ & 極端な値の影響を受けにくい \\
 \hline
-四分位偏差 & $\frac{Q_3 - Q_1}{2}$ & 四分位範囲の半分 \\
+四分位偏差 & $\, \frac{Q_3 - Q_1}{2} \,$ & 四分位範囲の半分 \\
 \hline
 \end{tabular}
 \end{center}
@@ -311,20 +333,31 @@ Q_3 = 18
 \vspace{2em}
 
 \begin{problem}[総合問題]
-次のデータは、ある学校の生徒10人の読書時間（分/日）である。
+次のデータは, ある学校の生徒10人の読書時間（分/日）である .
 
 \[
-30, 45, 20, 60, 35, 50, 25, 55, 40, 70
+30, \, 45, \, 20, \, 60, \, 35, \, 50, \, 25, \, 55, \, 40, \, 70
 \]
 
 \begin{enumerate}
-\item 平均値、中央値を求めなさい。
-\item 四分位数 $Q_1$、$Q_2$、$Q_3$ を求めなさい。
-\item 範囲と四分位範囲を求めなさい。
-\item 箱ひげ図を描きなさい。
+\item 平均値, 中央値を求めなさい .
+
+\vspace{7cm}
+
+\item 四分位数 $Q_1$, $Q_2$, $Q_3$ を求めなさい .
+
+\vspace{7cm}
+
+\item 範囲と四分位範囲を求めなさい .
+
+\vspace{7cm}
+
+\item 箱ひげ図を描きなさい .
+
+\vspace{8cm}
 \end{enumerate}
 \end{problem}
 
-\vspace{15cm}
+\vspace{2cm}
 
 

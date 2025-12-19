@@ -183,14 +183,15 @@
 }
 
 % 解答環境
-\newenvironment{solution}{%
-  \vspace{1em}%
-  \noindent%
+% solution環境を条件付きで表示（解答の内容全体を制御）
+\NewEnviron{solution}{%
   \ifshowanswer%
+    \vspace{1em}%
+    \noindent%
     \textbf{【解答】}\\%
+    \BODY%
+    \par\vspace{1em}%
   \fi%
-}{%
-  \par\vspace{1em}%
 }
 
 % 問題専用の解答環境（常に空欄, 手書きスペース確保）
@@ -224,8 +225,8 @@
 % 解答を表示したい場合：\showanswertrue
 % 解答を隠したい場合：\showanswerfalse
 \newif\ifshowanswer
-% ここを \showanswertrue に変更すると解答が表示されます
-\showanswertrue
+% デフォルトは非表示（main.texで制御）
+\showanswerfalse
 % 穴埋めコマンドの修正版（upLaTeX対応）
 \newcommand{\Blank}[2][3cm]{%
   ~%

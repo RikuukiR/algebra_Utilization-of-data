@@ -6,6 +6,13 @@
 
 \input{preamble.tex}
 
+% ========================================
+% 解答の表示・非表示を切り替え
+% ========================================
+% 解答を表示する場合：\showanswertrue
+% 解答を非表示にする場合：\showanswerfalse
+\showanswertrue
+
 % subsection番号を「1.1」形式に（thesectionの影響を受けないように）
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
 
@@ -49,7 +56,7 @@
 % ========================================
 
 \input{sections/01_データの整理.tex}
-% \input{sections/02_データの代表値.tex}
-% \input{sections/03_データの散らばりと四分位範囲.tex}
+\input{sections/02_データの代表値.tex}
+\input{sections/03_データの散らばりと四分位範囲.tex}
 
 \end{document}

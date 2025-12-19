@@ -4,360 +4,99 @@
 
 \section{データの散らばりと四分位範囲}
 
-データの代表値だけでは, データの特徴を十分に表せないことがあります.
+\subsection{範囲}
 
-データがどれだけ散らばっているかを表す値として, 範囲, 四分位数, 四分位範囲などがあります.
+% 範囲
+\begin{definitionbox}[def:範囲]{\textbf{範囲}}
+    データのとる値のうち、最大のものから最小のものをひいた値を \textbf{範囲} または \textbf{レンジ} という。
 
-\subsection{範囲（レンジ）}
-
-\begin{definitionbox}{}{範囲（range）}
-データの最大値と最小値の差.
-
-\[
-\text{範囲} = \text{最大値} - \text{最小値}
-\]
-
-\vspace{0.5em}
-\textbf{特徴：}
-\begin{itemize}
-\item 計算が簡単
-\item 極端な値の影響を受けやすい
-\item データの散らばり具合の大まかな目安になる
-\end{itemize}
+    範囲は、\uwave{データの散らばりの程度}を表す。
 \end{definitionbox}
 
-\vspace{1em}
-
-\begin{example}[7]
-次のデータの範囲を求めなさい.
-
-\[
-12, \, 18, \, 15, \, 22, \, 14, \, 20, \, 16, \, 19
-\]
-
-\begin{solution}
-最大値は22, 最小値は12なので,
-
-\[
-\text{範囲} = 22 - 12 = 10
-\]
-
-よって, 範囲は \textcolor{blue}{\textbf{10}} である.
-\end{solution}
-\end{example}
-
-\vspace{2em}
+\begin{theorembox}[thm:範囲]{\textbf{範囲}}
+    範囲は次の式で求められる。
+    \[
+    \textbf{(範囲)} = \textbf{(最大値)} - \textbf{(最小値)}
+    \]
+\end{theorembox}
 
 \subsection{四分位数}
 
-データを4等分する位置の値を四分位数といいます.
+次のデータは、ある中学校のA組とB組のそれぞれ20人に行ったテストの結果を、得点の低い順に並べたものである。（単位は点）
 
-\begin{definitionbox}{}{四分位数（quartile）}
-データを小さい順に並べたとき, データを4等分する3つの値.
-
-\vspace{0.5em}
-\begin{itemize}
-\item \textbf{第1四分位数（$Q_1$）}：下位25\%の位置の値
-\item \textbf{第2四分位数（$Q_2$）}：下位50\%の位置の値（中央値と同じ）
-\item \textbf{第3四分位数（$Q_3$）}：下位75\%の位置の値
-\end{itemize}
-
-\vspace{1em}
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-% 数直線
-\draw[thick,->] (0,0) -- (13,0) node[right] {データ};
-% 四分位数の位置
-\draw[thick] (2,0.2) -- (2,-0.2) node[below] {最小値};
-\draw[thick,red] (4,0.2) -- (4,-0.2) node[below,red] {$Q_1$};
-\draw[thick,blue] (6.5,0.2) -- (6.5,-0.2) node[below,blue] {$Q_2$};
-\draw[thick,red] (9,0.2) -- (9,-0.2) node[below,red] {$Q_3$};
-\draw[thick] (11,0.2) -- (11,-0.2) node[below] {最大値};
-% 領域の表示
-\node at (3,0.8) {25\%};
-\node at (5.25,0.8) {25\%};
-\node at (7.75,0.8) {25\%};
-\node at (10,0.8) {25\%};
-\end{tikzpicture}
-\end{center}
-\end{definitionbox}
-
-\vspace{2em}
-
-\subsection{四分位数の求め方}
-
-\begin{tcolorbox}[colback=blue!5, colframe=blue!70!black, title=四分位数の求め方]
-\textbf{手順：}
-\begin{enumerate}
-\item データを小さい順に並べる
-\item 中央値（$Q_2$）を求める
-\item 中央値より小さいデータの中央値が $Q_1$
-\item 中央値より大きいデータの中央値が $Q_3$
-\end{enumerate}
-
-\vspace{0.5em}
-\textbf{注意：}
-\begin{itemize}
-\item データの個数が奇数の場合, 中央値は含めない
-\item データの個数が偶数の場合, 半分に分けて考える
-\end{itemize}
+\begin{tcolorbox}[colback=white, colframe=black, boxrule=1.5pt, arc=3mm, left=10pt, right=10pt, top=8pt, bottom=8pt, boxsep=5pt, enhanced, borderline={1.5pt}{0pt}{black, dashed}, title=A組のテスト結果, fonttitle=\bfseries, coltitle=black, colbacktitle=white, attach boxed title to top left={yshift=-2mm, xshift=5mm}]
+26 \quad 31 \quad 35 \quad 39 \quad 44 \quad 48 \quad 52 \quad 55 \quad 57 \quad 63 \quad 67 \quad 68 \quad 74 \quad 75 \quad 78 \quad 82 \quad 85 \quad 87 \quad 92 \quad 93
 \end{tcolorbox}
 
-\vspace{2em}
-
-\begin{example}[8]
-次のデータの四分位数を求めなさい.
-
-\[
-8, \, 12, \, 15, \, 10, \, 18, \, 14, \, 20, \, 11, \, 16, \, 13, \, 19
-\]
-
-\begin{solution}
-\textbf{Step 1:} データを小さい順に並べる
-
-\[
-8, \, 10, \, 11, \, 12, \, 13, \, \textcolor{blue}{\textbf{14}}, \, 15, \, 16, \, 18, \, 19, \, 20
-\]
-
 \vspace{0.5em}
-データは11個（奇数）なので, 6番目の値が中央値.
 
-\[
-Q_2 = 14
-\]
+\begin{tcolorbox}[colback=white, colframe=black, boxrule=1.5pt, arc=3mm, left=10pt, right=10pt, top=8pt, bottom=8pt, boxsep=5pt, enhanced, borderline={1.5pt}{0pt}{black, dashed}, title=B組のテスト結果, fonttitle=\bfseries, coltitle=black, colbacktitle=white, attach boxed title to top left={yshift=-2mm, xshift=5mm}]
+27 \quad 42 \quad 47 \quad 49 \quad 51 \quad 53 \quad 54 \quad 56 \quad 59 \quad 64 \quad 66 \quad 68 \quad 69 \quad 69 \quad 72 \quad 76 \quad 79 \quad 82 \quad 85 \quad 94
+\end{tcolorbox}
 
-\vspace{1.5em}
-
-\textbf{Step 2:} $Q_1$ を求める（中央値より小さいデータ）
-
-\[
-8, \, 10, \, \textcolor{red}{\textbf{11}}, \, 12, \, 13
-\]
-
-\vspace{0.5em}
-5個（奇数）なので, 3番目の値が $Q_1$.
-
-\[
-Q_1 = 11
-\]
-
-\vspace{1.5em}
-
-\textbf{Step 3:} $Q_3$ を求める（中央値より大きいデータ）
-
-\[
-15, \, 16, \, \textcolor{red}{\textbf{18}}, \, 19, \, 20
-\]
-
-\vspace{0.5em}
-5個（奇数）なので, 3番目の値が $Q_3$.
-
-\[
-Q_3 = 18
-\]
-
-\vspace{1em}
-
-よって, $Q_1 = \textcolor{blue}{\textbf{11}}$, $Q_2 = \textcolor{blue}{\textbf{14}}$, $Q_3 = \textcolor{blue}{\textbf{18}}$ である.
-\end{solution}
-\end{example}
-
+% 四分位数
+\begin{definitionbox}[def:四分位数]{\textbf{四分位数}}
+    データの値を大きさの順に並べたとき、4等分する位置にくる値を \textbf{四分位数} という。
+    四分位数は小さい方から順に \textbf{第1四分位数}, \textbf{第2四分位数}, \textbf{第3四分位数} という。
+    第2四分位数は中央値のことである。
+\end{definitionbox}
 \newpage
 
-\begin{problem}[四分位数の計算]
-次の各データの四分位数 $Q_1$, $Q_2$, $Q_3$ を求めなさい.
+\subsection{四分位範囲}
 
-\begin{enumerate}
-\item $5, \, 8, \, 12, \, 15, \, 18, \, 20, \, 22, \, 25, \, 28$
-\vspace{8cm}
-
-\item $10, \, 14, \, 16, \, 18, \, 20, \, 22, \, 24, \, 26, \, 28, \, 30$
-\vspace{8cm}
-\end{enumerate}
-\end{problem}
-
-\vspace{2em}
-
-\subsection{四分位範囲と四分位偏差}
-
-\begin{definitionbox}{}{四分位範囲（IQR）}
-第3四分位数と第1四分位数の差.
-
-\[
-\text{四分位範囲} = Q_3 - Q_1
-\]
-
-\vspace{0.5em}
-データの中央50\%の散らばり具合を表す.
-
-\vspace{0.5em}
-\textbf{特徴：}
-\begin{itemize}
-\item 極端な値の影響を受けにくい
-\item データの散らばり具合を安定的に表せる
-\item 箱ひげ図で視覚的に表現できる
-\end{itemize}
+% 四分位範囲
+\begin{definitionbox}[def:四分位範囲]{\textbf{四分位範囲}}
+    第3四分位数から第1四分位数をひいた差を \textbf{四分位範囲} という。
 \end{definitionbox}
-
 \vspace{1em}
 
-\begin{definitionbox}{}{四分位偏差}
-四分位範囲の半分の値.
+四分位範囲は、範囲よりもより \uwave{中央値に近いところ} でのデータの散らばりの程度を調べることができる。
 
-\[
-\text{四分位偏差} = \, \frac{Q_3 - Q_1}{2} \,
-\]
-
-\vspace{0.5em}
-データの散らばりを表す別の指標.
-\end{definitionbox}
-
-\vspace{2em}
-
-\begin{example}[9]
-例題8のデータについて, 四分位範囲と四分位偏差を求めなさい.
-
-\begin{solution}
-例題8より, $Q_1 = 11$, $Q_3 = 18$ なので,
-
-\begin{align*}
-\text{四分位範囲} &= Q_3 - Q_1 \\[0.8em]
-&= 18 - 11 \\[0.8em]
-&= 7
-\end{align*}
-
+\begin{theorembox}[thm:四分位範囲]{\textbf{四分位範囲}}
+    四分位範囲は次の式で求められる。
+    \[
+    \textbf{(四分位範囲)} = \textbf{(第3四分位数)} - \textbf{(第1四分位数)}
+    \]
+\end{theorembox}
 \vspace{1em}
 
-\begin{align*}
-\text{四分位偏差} &= \, \frac{Q_3 - Q_1}{2} \, \\[1em]
-&= \, \frac{18 - 11}{2} \, \\[1em]
-&= \, \frac{7}{2} \, \\[1em]
-&= 3.5
-\end{align*}
+第1四分位数と第3四分位数の間の区間には、\uwave{データ全体のほぼ半分} が入っており、データの中には極端に大きな値や小さな値がっても、
+影響を受けにくい。
 
-\vspace{0.5em}
-よって, 四分位範囲は \textcolor{blue}{\textbf{7}}, 四分位偏差は \textcolor{blue}{\textbf{3.5}} である.
-\end{solution}
-\end{example}
-
-\vspace{2em}
+一般に、データが中央付近に集中しているほど、四分位範囲は小さくなり、データの散らばりの程度は小さいといえる。
+\newpage
 
 \subsection{箱ひげ図}
 
-四分位数を使って, データの分布を視覚的に表したグラフを箱ひげ図といいます.
+四分位数や四分位範囲を使って、データの分布を図で表してみよう。
 
-\begin{definitionbox}{}{箱ひげ図（box plot）}
-データの最小値, $Q_1$, $Q_2$, $Q_3$, 最大値の5つの値を使って, データの分布を表すグラフ.
+データの散らばりのようすを図で表すと、次のようになる。
+\vspace{8em}
 
-\vspace{1em}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-% 数直線
-\draw[thick,->] (0,0) -- (14,0);
-\foreach \x in {0,2,4,6,8,10,12}
-    \node at (\x,-0.5) {\x};
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+        % 横軸
+        \draw[thick] (0, 0) -- (10, 0);
 
-% 箱ひげ図の例
-\draw[thick] (2,1) -- (2,3);  % 最小値
-\draw[thick] (2,2) -- (4,2);  % ひげ（左）
-\draw[thick,fill=blue!20] (4,1) rectangle (10,3);  % 箱
-\draw[thick,red] (7,1) -- (7,3);  % 中央値
-\draw[thick] (10,2) -- (12,2);  % ひげ（右）
-\draw[thick] (12,1) -- (12,3);  % 最大値
+        % 箱ひげ図 (y=2の位置)
+        \draw[very thick] (1, 2) -- (9, 2); % ひげ（最小値〜最大値）
+        \draw[very thick] (1, 1.6) -- (1, 2.4); % 最小値の線
+        \draw[very thick] (9, 1.6) -- (9, 2.4); % 最大値の線
+        \fill[blue!20] (3, 1.3) rectangle (7, 2.7); % 箱（Q1〜Q3）
+        \draw[very thick] (3, 1.3) rectangle (7, 2.7); % 箱の枠線
+        \draw[very thick, red, line width=2pt] (4.5, 1.3) -- (4.5, 2.7); % 中央値
 
-% ラベル
-\node[below] at (2,0.5) {最小値};
-\node[below] at (4,0.5) {$Q_1$};
-\node[below,red] at (7,0.5) {$Q_2$};
-\node[below] at (10,0.5) {$Q_3$};
-\node[below] at (12,0.5) {最大値};
+    \end{tikzpicture}
+    \caption{}
+    \label{fig:boxplot}
+\end{figure}
 
-% 四分位範囲の表示
-\draw[<->,thick,blue] (4,4) -- (10,4);
-\node[above,blue] at (7,4) {四分位範囲};
-\end{tikzpicture}
-\end{center}
-
-\vspace{0.5em}
-\textbf{読み取れる情報：}
-\begin{itemize}
-\item データの中央値と散らばり
-\item データの分布の偏り
-\item 複数のデータの比較
-\end{itemize}
+% 箱ひげ図
+\begin{definitionbox}[def:箱ひげ図]{\textbf{箱ひげ図}}
+    図\ref{fig:boxplot}を \textbf{箱ひげ図} という。
+    箱ひげ図は、データの最小値、第1四分位数、中央値(第2四分位数)、第3四分位数、最大値を箱とひげで表している。
+    箱の横の長さは、四分位範囲を表す。
 \end{definitionbox}
 
-\vspace{2em}
-
-\begin{problem}[四分位範囲と箱ひげ図]
-2つのクラスA, Bで数学のテストを行った. 結果は次の通りである.
-
-\vspace{0.5em}
-\textbf{クラスA：} 最小値50点, $Q_1$65点, $Q_2$72点, $Q_3$80点, 最大値95点
-
-\vspace{0.5em}
-\textbf{クラスB：} 最小値55点, $Q_1$62点, $Q_2$70点, $Q_3$78点, 最大値90点
-
-\vspace{1em}
-\begin{enumerate}
-\item 各クラスの四分位範囲を求めなさい.
-
-\vspace{5cm}
-
-\item 各クラスの箱ひげ図を描き, 成績の分布を比較しなさい.
-
-\vspace{10cm}
-\end{enumerate}
-\end{problem}
-
-\vspace{2cm}
-
-\subsection{まとめ：データの散らばりを表す指標}
-
-\begin{tcolorbox}[colback=green!5, colframe=green!70!black, title=散らばりの指標のまとめ]
-\begin{center}
-\begin{tabular}{|c|c|p{6cm}|}
-\hline
-\textbf{指標} & \textbf{計算式} & \textbf{特徴} \\
-\hline
-範囲 & 最大値 $-$ 最小値 & 簡単だが極端な値の影響を受けやすい \\
-\hline
-四分位範囲 & $Q_3 - Q_1$ & 極端な値の影響を受けにくい \\
-\hline
-四分位偏差 & $\, \frac{Q_3 - Q_1}{2} \,$ & 四分位範囲の半分 \\
-\hline
-\end{tabular}
-\end{center}
-\end{tcolorbox}
-
-\vspace{2em}
-
-\begin{problem}[総合問題]
-次のデータは, ある学校の生徒10人の読書時間（分/日）である.
-
-\[
-30, \, 45, \, 20, \, 60, \, 35, \, 50, \, 25, \, 55, \, 40, \, 70
-\]
-
-\begin{enumerate}
-\item 平均値, 中央値を求めなさい.
-
-\vspace{7cm}
-
-\item 四分位数 $Q_1$, $Q_2$, $Q_3$ を求めなさい.
-
-\vspace{7cm}
-
-\item 範囲と四分位範囲を求めなさい.
-
-\vspace{7cm}
-
-\item 箱ひげ図を描きなさい.
-
-\vspace{8cm}
-\end{enumerate}
-\end{problem}
-
-\vspace{2cm}
-
-
+\newpage

@@ -4,274 +4,146 @@
 
 \section{データの代表値}
 
-データの特徴を1つの値で表すとき, その値を\textbf{代表値}といいます.
+\begin{definitionbox}[def:代表値]{\textbf{代表値}}
+    いくつかの値が集まったデータがあるとき、そのデータ全体の特徴を表す数値を、
+    そのデータの \textbf{代表値} という。
+\end{definitionbox}
+\vspace{1em}
 
-代表値には, 平均値, 中央値（メジアン）, 最頻値（モード）があります.
+代表値には、平均値、中央値、最頻値がある。
 
 \subsection{平均値}
 
-\begin{definitionbox}{}{平均値（mean）}
-すべてのデータの値を足して, データの個数で割った値.
+\begin{definitionbox}[def:平均値]{\textbf{平均値}}
+    $n$ 個の値が集まったデータがあるとする。
 
-\[
-\text{平均値} = \, \frac{\text{データの値の合計}}{\text{データの個数}} \,
-\]
-
-\vspace{0.5em}
-記号では, データを $x_1, x_2, \ldots, x_n$ とすると, 平均値 $\mean{x}$ は次のように表される.
-
-\[
-\mean{x} = \, \frac{x_1 + x_2 + \cdots + x_n}{n} \, = \, \frac{1}{n}\sum_{i=1}^{n} x_i \,
-\]
-
-\vspace{0.5em}
-\textbf{特徴：}
-\begin{itemize}
-\item すべてのデータが平均値に関わる
-\item 極端に大きい値や小さい値の影響を受けやすい
-\end{itemize}
+    これら $n$ 個の値の合計を個数 $n$ でわった値を、このデータの \textbf{平均値} という。
 \end{definitionbox}
 
-\vspace{1em}
+\begin{theorembox}[thm:平均値]{\textbf{平均値}}
+    平均値は次の式で求められる。
 
-\begin{example}[3]
-次のデータの平均値を求めなさい.
+    \[
+    \textbf{(平均値)} = \dfrac{\textbf{(データの値の合計)}}{\textbf{(データの個数)}}
+    \]
+\end{theorembox}
 
-\[
-5, \, 8, \, 6, \, 9, \, 7, \, 10, \, 6, \, 8, \, 7, \, 9
-\]
+% 練習5
+\begin{exercise}[【教p.120 練習5】]
+    次のデータは、ジョギングを日課にしているAさんが最近5日間に行ったジョギングの時間である。
+    このデータの平均値を求めよ。
 
-\begin{solution}
-\begin{align*}
-\mean{x} &= \, \frac{5 + 8 + 6 + 9 + 7 + 10 + 6 + 8 + 7 + 9}{10} \, \\[0.8em]
-&= \, \frac{75}{10} \, \\[0.8em]
-&= 7.5
-\end{align*}
+    \[
+    23 \qquad\quad 18 \qquad\quad 35 \qquad\quad 27 \qquad\quad 42 \qquad \text{(単位は 分)}
+    \]
+\end{exercise}
 
-よって, 平均値は \textcolor{blue}{\textbf{7.5}} である.
-\end{solution}
-\end{example}
-
-\vspace{2em}
-
-\begin{problem}[平均値の計算]
-次の各データの平均値を求めなさい.
-
-\begin{enumerate}
-\item $3, \, 5, \, 7, \, 9, \, 11$
-\vspace{5cm}
-
-\item $12, \, 15, \, 18, \, 14, \, 16, \, 13, \, 17$
-\vspace{5cm}
-
-\item $20, \, 25, \, 22, \, 28, \, 30, \, 24, \, 26, \, 23$
-\vspace{5cm}
-\end{enumerate}
-\end{problem}
-
+    \begin{proof}\mbox{}\\
+        \begin{alignanswer*}
+            \textbf{(平均値)} &= \dfrac{23 + 18 + 35 + 27 + 42}{5} \\
+            &= \dfrac{145}{5} \\
+            &= 29 \text{(分)}
+        \end{alignanswer*}
+    \end{proof}
 \newpage
 
-\subsection{度数分布表からの平均値}
+\begin{definitionbox}[def:中央値]{\textbf{中央値}}
+    \uwave{データを大きさの順に並べたとき}、その中央にくる値を、\textbf{中央値} または \textbf{メジアン} という。
 
-度数分布表が与えられている場合, 階級値を使って平均値を求めます.
-
-\begin{definitionbox}{}{度数分布表からの平均値}
-度数分布表において, 各階級の階級値を $x_i$, 度数を $f_i$ とすると, 平均値は次のように求められる.
-
-\[
-\mean{x} = \, \frac{x_1 f_1 + x_2 f_2 + \cdots + x_n f_n}{f_1 + f_2 + \cdots + f_n} \, = \, \frac{\sum x_i f_i}{\sum f_i} \,
-\]
-
-\vspace{0.5em}
-\textbf{計算手順：}
-\begin{enumerate}
-\item 各階級の階級値と度数の積を求める
-\item すべての積の合計を求める
-\item 合計を総度数で割る
-\end{enumerate}
+    ただし、データの個数が偶数のとき、中央に2つの値が並ぶから、その2つの値の平均値を中央値とする。
 \end{definitionbox}
 
-\vspace{1em}
+% 練習6
+\begin{exercise}[【教p.120 練習6】]
+    次のデータは、あるクラスの生徒10人の英語のテストの得点である。
+    このデータの中央値を求めよ。
 
-\begin{example}[4]
-次の度数分布表から, 平均値を求めなさい.
+    \[
+    75 \qquad 38 \qquad 49 \qquad 88 \qquad 61 \qquad 83 \qquad 44 \qquad 67 \qquad 58 \qquad 95 \qquad \text{(単位は 点)}
+    \]
+\end{exercise}
 
-\vspace{1em}
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{階級（点）} & \textbf{階級値（点）} & \textbf{度数（人）} \\
-\hline
-50以上〜60未満 & 55 & 2 \\
-\hline
-60以上〜70未満 & 65 & 6 \\
-\hline
-70以上〜80未満 & 75 & 9 \\
-\hline
-80以上〜90未満 & 85 & 3 \\
-\hline
-\textbf{合計} & - & \textbf{20} \\
-\hline
-\end{tabular}
-\end{center}
+    \begin{proof}\mbox{}\\
+        10人の英語のテストの得点を、低い順に並べると
 
-\begin{solution}
-各階級値と度数の積を計算する.
+        \begin{alignanswer*}
+            38 \qquad 44 \qquad 49 \qquad 58 \qquad 61 \qquad 67 \qquad 75 \qquad 83 \qquad 88 \qquad 95
+        \end{alignanswer*}
 
-\begin{align*}
-\mean{x} &= \, \frac{55 \times 2 + 65 \times 6 + 75 \times 9 + 85 \times 3}{20} \, \\[0.8em]
-&= \, \frac{110 + 390 + 675 + 255}{20} \, \\[0.8em]
-&= \, \frac{1430}{20} \, \\[0.8em]
-&= 71.5
-\end{align*}
+        5番目と6番目の得点の平均値が中央値であるから
 
-よって, 平均値は \textcolor{blue}{\textbf{71.5点}} である.
-\end{solution}
-\end{example}
+        \begin{alignanswer*}
+            \textbf{(中央値)} &= \dfrac{61 + 67}{2} \\
+            &= 64 \text{(点)}
+        \end{alignanswer*}
+    \end{proof}
 
-\vspace{2em}
+\begin{definitionbox}[def:最頻値]{\textbf{最頻値}}
+    データにおいて、最も個数の多い値を、そのデータの \textbf{最頻値} または \textbf{モード} という。
 
-\subsection{中央値（メジアン）}
-
-\begin{definitionbox}{}{中央値（median）}
-データを大きさの順に並べたとき, 中央に位置する値.
-
-\vspace{0.5em}
-\textbf{求め方：}
-\begin{itemize}
-\item データの個数が奇数のとき：真ん中の値
-\item データの個数が偶数のとき：真ん中の2つの値の平均
-\end{itemize}
-
-\vspace{0.5em}
-\textbf{特徴：}
-\begin{itemize}
-\item データを2等分する位置の値
-\item 極端な値の影響を受けにくい
-\end{itemize}
+    \uwave{データが度数分布表に整理されているときは}、\textbf{度数が最も大きい階級の階級値を最頻値}とする。
 \end{definitionbox}
 
-\vspace{1em}
-
-\begin{example}[5]
-次のデータの中央値を求めなさい.
-
-(1) $3, \, 7, \, 5, \, 9, \, 6, \, 8, \, 4$
-
-(2) $12, \, 15, \, 10, \, 18, \, 14, \, 16$
-
-\begin{solution}
-(1) データを大きさの順に並べる：$3, \, 4, \, 5, \, \textcolor{red}{\textbf{6}}, \, 7, \, 8, \, 9$
-
-\vspace{0.5em}
-データは7個（奇数）なので, 4番目の値が中央値.
-
-\vspace{0.5em}
-よって, 中央値は \textcolor{blue}{\textbf{6}} である.
-
-\vspace{1.5em}
-
-(2) データを大きさの順に並べる：$10, \, 12, \, \textcolor{red}{\textbf{14}}, \, \textcolor{red}{\textbf{15}}, \, 16, \, 18$
-
-\vspace{0.5em}
-データは6個（偶数）なので, 3番目と4番目の値の平均が中央値.
-
-\[
-\text{中央値} = \, \frac{14 + 15}{2} \, = \, \frac{29}{2} \, = 14.5
-\]
-
-よって, 中央値は \textcolor{blue}{\textbf{14.5}} である.
-\end{solution}
-\end{example}
-
-\vspace{2em}
-
-\begin{problem}[中央値の計算]
-次の各データの中央値を求めなさい.
-
-\begin{enumerate}
-\item $8, \, 12, \, 15, \, 10, \, 14, \, 11, \, 13$
-\vspace{6cm}
-
-\item $20, \, 25, \, 18, \, 22, \, 24, \, 19, \, 21, \, 23$
-\vspace{6cm}
-\end{enumerate}
-\end{problem}
-
+% 練習7
+\begin{exercise}[【教p.121 練習7改訂】]
+    表\ref{tab:height_distribution}において、身長の最頻値を求めよ。
+    このデータの最頻値を求めよ。
+\end{exercise}
 \newpage
 
-\subsection{最頻値（モード）}
+度数分布表を利用したデータの平均値を求める方法を考えよう。データが度数分布表にまとめられているとき、\textbf{ある階級に含まれるデータは、すべてその階級の階級値をとるものと考えて} 平均値を求める。
 
-\begin{definitionbox}{}{最頻値（mode）}
-データの中で最も多く現れる値. 度数分布表では, 度数が最も大きい階級の階級値.
+\begin{theorembox}[thm:度数分布表を利用した平均値]{\textbf{度数分布表を利用した平均値}}
+    度数分布表を利用した平均値は次の式で求められる。
+    \[
+    \textbf{(平均値)} = \dfrac{\{\textbf{\textbf{(階級値)}} \bm{\times} \textbf{\textbf{(度数)}}\} \textbf{の合計}}
+    {\textbf{\textbf{(度数の合計)}}}
+    \]
+\end{theorembox}
 
-\vspace{0.5em}
-\textbf{特徴：}
-\begin{itemize}
-\item データの中で最も頻繁に現れる値
-\item 複数存在する場合もある
-\item 存在しない場合もある
-\end{itemize}
-\end{definitionbox}
-
-\vspace{1em}
-
-\begin{example}[6]
-次のデータの最頻値を求めなさい.
-
-\[
-5, \, 7, \, 8, \, 5, \, 9, \, 6, \, 5, \, 8, \, 7, \, 10
-\]
-
-\begin{solution}
-各値の度数を数える：
-
-\begin{center}
-\begin{tabular}{c|cccccc}
-値 & 5 & 6 & 7 & 8 & 9 & 10 \\
-\hline
-度数 & \textcolor{red}{\textbf{3}} & 1 & 2 & 2 & 1 & 1
-\end{tabular}
-\end{center}
-
-\vspace{0.5em}
-5が3回で最も多く現れる.
-
-\vspace{0.5em}
-よって, 最頻値は \textcolor{blue}{\textbf{5}} である.
-\end{solution}
+% 追加例題3
+\begin{example}[【教p.121 追加例題3】]
+    表\ref{tab:height_distribution}において, 次の問いに答えなさい.
+    \begin{enumerate}
+        \item 身長の平均値を求めなさい.
+        \item 身長の中央値を求めなさい.
+    \end{enumerate}
 \end{example}
 
-\vspace{2em}
+\begin{proof}\mbox{}\\
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r@{〜}l|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{階級（cm）}} & \textbf{度数（人）} & \textbf{階級値} & \textbf{階級値}$\bm{\times}$\textbf{度数} \\
+        \hline
+        135{\scriptsize 以上} & 140{\scriptsize 未満} & 2 & \answertable{137.5} & \answertable{275} \\
+        \hline
+        140 & 145 & 4 & \answertable{142.5} & \answertable{570} \\
+        \hline
+        145 & 150 & 5 & \answertable{147.5} & \answertable{737.5} \\
+        \hline
+        150 & 155 & 8 & \answertable{152.5} & \answertable{1220} \\
+        \hline
+        155 & 160 & 11 & \answertable{157.5} & \answertable{1732.5} \\
+        \hline
+        160 & 165 & 9 & \answertable{162.5} & \answertable{1462.5} \\
+        \hline
+        165 & 170 & 7 & \answertable{167.5} & \answertable{1172.5} \\
+        \hline
+        170 & 175 & 4 & \answertable{172.5} & \answertable{690} \\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{計}} & \textbf{50} & & \answertable{7860} \\
+        \hline
+        \end{tabular}
+        \label{tab:height_average}
+    \end{table}
 
-\subsection{3つの代表値の比較}
+    \begin{alignanswer*}
+        \text{(平均値)} = \dfrac{7860}{50} = \answermath{157.2} \text{(cm)}\\
+        \text{(中央値)} = \answermath{155.5} \text{(cm)}
+    \end{alignanswer*}
+    \vspace{-6em}
+\end{proof}
 
-\begin{tcolorbox}[colback=yellow!10, colframe=orange!70!black, title=代表値のまとめ]
-\begin{center}
-\begin{tabular}{|c|p{4cm}|p{5cm}|}
-\hline
-\textbf{代表値} & \textbf{特徴} & \textbf{使い分け} \\
-\hline
-平均値 & すべてのデータを使う & 全体的な傾向を知りたいとき \\
-\hline
-中央値 & 極端な値の影響を受けにくい & データに極端な値があるとき \\
-\hline
-最頻値 & 最も多く現れる値 & どの値が多いか知りたいとき \\
-\hline
-\end{tabular}
-\end{center}
-\end{tcolorbox}
-
-\vspace{1em}
-
-\begin{problem}[代表値の計算]
-次のデータについて, 平均値, 中央値, 最頻値を求めなさい.
-
-\[
-6, \, 8, \, 7, \, 9, \, 6, \, 10, \, 7, \, 8, \, 6, \, 9, \, 7, \, 8
-\]
-\end{problem}
-
-\vspace{12cm}
-
-
+\newpage

@@ -34,13 +34,13 @@
   \setlength{\belowdisplayshortskip}{3pt}%
 }
 
-% 分数コマンドを再定義（分子と分母の両端に0.5文字分の空白を追加）
+% 分数コマンドを再定義（分子と分母の両端に1文字分の空白を追加）
 % 元のコマンドを保存
 \let\oldfrac\frac
 \let\olddfrac\dfrac
-% 再定義（\, は0.5文字分の空白）
-\renewcommand{\frac}[2]{\oldfrac{\,#1\,}{\,#2\,}}
-\renewcommand{\dfrac}[2]{\olddfrac{\,#1\,}{\,#2\,}}
+% 再定義（\; は1文字分の空白）
+\renewcommand{\frac}[2]{\oldfrac{\;#1\;}{\;#2\;}}
+\renewcommand{\dfrac}[2]{\olddfrac{\;#1\;}{\;#2\;}}
 
 % 平均記号のバーを長くするコマンド
 \newcommand{\mean}[1]{\overline{#1}}
@@ -52,9 +52,9 @@
 % 分数用コマンド（表専用 - 分子を空欄にしてレイアウト保持）
 \newcommand{\fracblank}[2]{%
   \ifshowanswer
-    \textcolor{blue}{\frac{\,#1\,}{\,#2\,}}%  解答版：青色
+    \textcolor{blue}{\frac{\;#1\;}{\;#2\;}}%  解答版：青色
   \else
-    \frac{\,\phantom{#1}\,}{\,#2\,}%  空欄版：分子を透明化, レイアウト保持
+    \frac{\;\phantom{#1}\;}{\;#2\;}%  空欄版：分子を透明化, レイアウト保持
   \fi
 }
 

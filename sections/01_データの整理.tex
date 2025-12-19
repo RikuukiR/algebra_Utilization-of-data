@@ -59,14 +59,12 @@
 \begin{definitionbox}[def:ヒストグラム]{\textbf{ヒストグラム}}
     度数分布表を, 柱状のグラフで表したものを \textbf{ヒストグラム} という .
 
-    \vspace{0.5em}
     ヒストグラムの各長方形の横の長さは階級の幅を表し, 高さは各階級の度数を表す .
 \end{definitionbox}
 
 \begin{definitionbox}[def:度数折れ線]{\textbf{度数折れ線}}
     ヒストグラムの各長方形の上の辺の中点を結んでできる折れ線グラフを \textbf{度数折れ線} という .
 
-    \vspace{0.5em}
     ただし, 度数折れ線をつくる時は, ヒストグラムの左右の両端に度数が0の階級があるものと考える .
 \end{definitionbox}
 \newpage
@@ -86,43 +84,29 @@
 \subsection{相対度数}
 
 \begin{definitionbox}[def:相対度数]{\textbf{相対度数}}
-    度数の合計に対する各階級の度数の割合を \textbf{相対度数} という .
-
-    \vspace{0.5em}
-    相対度数はふつう小数を用いて表す .
+    度数の合計に対する各階級の度数の割合を \textbf{相対度数} という.相対度数はふつう小数を用いて表す .
 \end{definitionbox}
 
 \begin{theorembox}[thm:相対度数]{\textbf{相対度数}}
-    相対度数は次の式で求められる .
+    相対度数は次の式で求められる.
 
     \[
-    \textbf{(相対度数)} = \, \dfrac{\textbf{(\answermath{\hspace{6em}})}}{\textbf{(\answermath{\hspace{6em}})}} \,
+    \textbf{(相対度数)} = \dfrac{\;\;\textbf{(\answertext{その階級の度数})\;\;}}{\;\;\textbf{(\answertext{度数の合計})}\;\;}
     \]
 
-    \vspace{1em}
 \end{theorembox}
-\vspace{2em}
-
-Definition\ref{def:相対度数}より, 相対度数の合計は必ず \hspace{3em} になる .
-
 \vspace{1em}
 
-また, 相対度数を使用するメリットは, 度数の合計が異なる複数の分布について,
+Definition\ref{def:相対度数}より, 相対度数の合計は必ず \textbf{1} になる .
 
-\vspace{0.5em}
-
-\hspace{3em} を比較することができる .
-
+また, 相対度数を使用するメリットは, 度数の合計が異なる複数の分布について, \textbf{より正確に比較することができる} ことである.
 
 % 累積度数
 \subsection{累積度数}
 
 \begin{definitionbox}[def:累積度数]{\textbf{累積度数}}
-    度数分布表において, 各階級以下または各階級以上の階級の度数をたし合わせたものを
+    度数分布表において, 各階級以下または各階級以上の階級の度数をたし合わせたものを\textbf{累積度数} という .
 
-    \textbf{累積度数} という .
-
-    \vspace{0.5em}
     また, 累積度数を表にまとめたものを \textbf{累積度数分布表} という .
 \end{definitionbox}
 
@@ -130,9 +114,9 @@ Definition\ref{def:相対度数}より, 相対度数の合計は必ず \hspace{3
 \begin{definitionbox}[def:累積相対度数]{\textbf{累積相対度数}}
     累積度数についても, 度数の合計に対する各階級の累積度数の割合を考えることがある .
 
-    \vspace{0.5em}
     この割合を \textbf{累積相対度数} という .
 \end{definitionbox}
+\newpage
 
 % 追加例題2
 \begin{example}[【教p.119 追加例題2】]
@@ -145,8 +129,35 @@ Definition\ref{def:相対度数}より, 相対度数の合計は必ず \hspace{3
     \end{enumerate}
 \end{example}
 
-\begin{proof}
-    
+\begin{proof}\mbox{}\\
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r@{〜}l|c|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{階級（cm）}} & \textbf{度数（人）} & \textbf{相対度数} & \textbf{累積度数(人)} & \textbf{累積相対度数} \\
+        \hline
+        135{\scriptsize 以上} & 140{\scriptsize 未満} & 2 & \answermath{0.04} & \answermath{2} & \answermath{0.04} \\
+        \hline
+        140 & 145 & 4 & \answermath{0.08} & \answermath{6} & \answermath{0.12} \\
+        \hline
+        145 & 150 & 5 & \answermath{0.10} & \answermath{11} & \answermath{0.22} \\
+        \hline
+        150 & 155 & 8 & \answermath{0.16} & \answermath{19} & \answermath{0.38} \\
+        \hline
+        155 & 160 & 11 & \answermath{0.22} & \answermath{30} & \answermath{0.60} \\
+        \hline
+        160 & 165 & 9 & \answermath{0.18} & \answermath{39} & \answermath{0.78} \\
+        \hline
+        165 & 170 & 7 & \answermath{0.14} & \answermath{46} & \answermath{0.92} \\
+        \hline
+        170 & 175 & 4 & \answermath{0.08} & \answermath{50} & \answermath{1.00} \\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{計}} & \textbf{50} & 1.00 & \diagbox[dir=NE]{}{} & \diagbox[dir=NE]{}{} \\
+        \hline
+        \end{tabular}
+        \caption{身長の累積度数分布表}
+        \label{tab:height_cumulative}
+    \end{table}
 \end{proof}
 
 \newpage
